@@ -1,0 +1,59 @@
+
+
+\section{Parameters for Panel(Heat)}
+
+This Section contains the parameters for the heat side of the panel together with explanations and sources
+
+
+\subsection{densities of the panel parts}
+\begin{tabular}{ l l |c| l}
+	rho_Glass=		&3000	&\cite{lim2017diurnal}	&Density of the Glass covering the Panel [kg/m\textsuperscript{3}]\\     	
+	rho_PVcells=	&2330	&\cite{lim2017diurnal}	&Density of the Photovoltaik cells [\si{kg.m^{-3}}] \\     
+	rho_EVA=		&960	&\cite{lim2017diurnal}	&Density of the ethylene vinyl acetate (EVA) layer [\si{\kilogram\per\meter^{3}}]\\
+	rho_Backsheet=	&2700	&\cite{lim2017diurnal}	&Density of the Metal back sheet [\si[per-mode=fraction]{\kilogram\per\meter^{3}}]\\ 
+\end{tabular}
+
+\subsection{Thicknesses of the panel parts}
+\begin{tabular}{ l l |c| l}
+	thickness_Glass=	&0.003	&\cite{lim2017diurnal}&Thickness of the Glass covering the Panel[m]\\  	
+	thickness_PVcells=	&0.00022&\cite{lim2017diurnal}&Thickness of the Photovoltaik cells[\si{m}]\\	
+	thickness_EVA=		&0.00050&\cite{lim2017diurnal}&Thickness of the ethylene vinyl acetate (EVA) layer[\si{\meter}]\\
+	thickness_Backsheet=&0.00001&\cite{lim2017diurnal}&Thickness of the Metal back sheet[m]\\ 	
+\end{tabular}	
+
+\subsection{Heat capacities for the panel}
+\begin{tabular}{ l l |c| l}
+	c_Glass=	&500	&\cite{lim2017diurnal}&Specific Heat capacity of the Glass covering [J/(kg*K)]\\
+	c_PVcells=	&677	&\cite{lim2017diurnal}&Specific Heat capacity of the PV cells [\si{J.kg^{-1}.K^{-1}}]\\
+	c_EVA=		&2090 	&\cite{lim2017diurnal}&Specific Heat capacity of the ethylene vinyl acetate (EVA) layer [\si{\joule\per\kilogram\per\kelvin}]\\
+	c_Backsheet=&900	&\cite{lim2017diurnal}&Specific Heat capacity of the Glass covering  [\si[per-mode=symbol]{\joule\per\kilogram\per\kelvin}]\\	
+\end{tabular}
+
+
+\subsection{Heat transfer to the outside and influence of wind}
+Usually the heat transfer is expressed as a U-Value. In this model, the influence of the wind is regarded as well. That means, the convective heat transfer coefficient needs to be used instead.\\
+The convective heat transfer coefficient is given as:\\
+$ hw = 5.7 + 3.8*windSpeed  $ \cite{doi:10.1093/ijlct/2.4.359}\\
+This means U_PA = hw
+
+
+\subsection{Panel efficiency}
+\begin{tabular}{ l l |c| l}
+	eta_PV=	&0.139	&\cite{AnafH-NRG}	&Electric efficiency of the Panel
+\end{tabular}
+
+
+\subsection{Panel dimensions}
+\begin{tabular}{ l l |c| l}
+	l_collector=	&1.652	&\cite{AnafH-NRG}	&Total length [m]\\
+	b_collector=	&1.000	&\cite{AnafH-NRG}	&Total width [m]\\
+\end{tabular}
+
+
+\subsection{Tubing parameters}
+\begin{tabular}{ l l |c| l}
+	A_PW=	&1.46	&\cite{AnafH-NRG}	       &Heat absorption area for the water[\si{\meter\squared}]\\
+	U_PW= 	&237    & \cite{TEngToolB}         &heat transfer coefficient Panel/water [\si[per-mode=symbol]{\watt\per\square\meter\per\kelvin}]\\
+\end{tabular}
+
+

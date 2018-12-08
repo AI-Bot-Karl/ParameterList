@@ -1,0 +1,34 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[usenames,dvipsnames]{color} % color text
+\usepackage{listings}
+\usepackage{alphalph}
+\usepackage[backend=bibtex]{biblatex} 
+\addbibresource{Sources.bib}    
+\usepackage[ddmmyyyy]{datetime}
+%Packages I added
+\usepackage{underscore} %allows the use of the underscore character (normally used by Latex to show when to make a hyphen )
+\usepackage{makecell} %allows text wrapping in tables
+\usepackage{siunitx} %makes representation of SI units easier and much more!
+\author{Karl}
+\pagenumbering{arabic}
+\begin{document}
+	\input{ParameterList/template}
+	\input{ParameterList/PanelHeat}
+	\input{ParameterList/PanelElectric}
+	\input{ParameterList/Boiler}
+	\input{ParameterList/HeatExchangerBoiler}
+	\input{ParameterList/PipingPanelToBoiler}
+	\input{ParameterList/PipingBilerToPanel}
+	\newpage
+	\printbibliography
+
+
+
+
+\end{document}
