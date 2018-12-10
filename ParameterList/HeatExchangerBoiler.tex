@@ -1,6 +1,3 @@
-\begin{document}
-	
-\end{document}
 \section{Parameters for Heat Exchanger(Boiler)} 
 
 This Section contains the parameters for the Heat Exchanger (Boiler) together with explanations and sources 
@@ -15,11 +12,16 @@ This Section contains the parameters for the Heat Exchanger (Boiler) together wi
 	ΔL=		&0.5		&Section length of the heat exchanger [m]  \\
 	d_{p}=		&0.05		&Diameter of the pipe [m]  \\
 	A_{p}=		&0.0785		&Surface area of the pipe [m^{2}]  \\
-	T_{in}=		&80	        &Temperature of water inlet from collector [°C]  \\
+	T_{in}=		&80	        &Inlet temperature of water from collector [°C]  \\
 	T_{boiler}      &20      &Temperature of water in the boiler [°C] \\
 	
 	
 \end{tabular}
 
+\subsection{Formulas used to calculate the parameters}
+
+    A_{p}= π*d_{p}*ΔL \\
+    V_{w}= (π/4)*d_{p}^{2}*ΔL \\
+	m_{w}= rho_{w}* V_{w} \\
 
 
