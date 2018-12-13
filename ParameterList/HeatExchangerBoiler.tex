@@ -4,16 +4,16 @@ This Section contains the parameters for the Heat Exchanger (Boiler) together wi
 
 \begin{tabular}{ l l |c| l} 
 	$ \dot{m_{w}}=$		&0.25       &                                          &Mass flow rate of water [\si{kg.s^{-1}}]\\     	
-	Cp_{w}=	           	&4180	    &\cite{SpecificHeat}	                   &Specific Heat of water [\si{J.kg^{-1}.K^{-1})}]\\     
+	$ Cp_{w} $=	           	&4180	    &\cite{SpecificHeat}	                   &Specific Heat of water [\si{J.kg^{-1}.K^{-1})}]\\     
 	U=		            &400	    &\cite{HeatTransferCoefficient}	           &Heat transfer coefficient between Copper and Water [\si{W.m^{-2}.K^{-1}}] \\
-	rho_{w}=	     	&1000	    &\cite{WaterDensity}	                   &Density of water [\si{kg.m^{-3}}] \\
-	V_{w}=		        &0.000981	&                                          &Volume of water in the heat exhcanger [\si{m^{3}}]  \\
-	m_{w}=	          	&0.981		&                                          &Mass of water in the heat exchanger [\si{kg}]  \\
-	delta_L=	    	&0.5		&                                          &Section length of the heat exchanger [\si{m}]  \\
-	d_{p}=		        &0.02		&                                          &Diameter of the pipe [\si{m}]  \\
-	A_{p}=	         	&0.0785		&                                          &Surface area of the pipe [\si{m^{2}}]  \\
-	T_{in}=		        &353	    &                                          &Inlet temperature of water from collector [\si{K}]  \\
-	T_{boiler}          &293        &                                          &Temperature of water in the boiler [\si{K}] \\		
+	$ rho_{w} $=	     	&1000	    &\cite{WaterDensity}	                   &Density of water [\si{kg.m^{-3}}] \\
+	$ V_{w} $=		        &0.000981	&                                          &Volume of water in the heat exhcanger [\si{m^{3}}]  \\
+	$ m_{w} $=	          	&0.981		&                                          &Mass of water in the heat exchanger [\si{kg}]  \\
+	$ delta_L $=	    	&0.5		&                                          &Section length of the heat exchanger [\si{m}]  \\
+	$ d_{p} $=		        &0.02		&                                          &Diameter of the pipe [\si{m}]  \\
+	$ A_{p} $=	         	&0.0785		&                                          &Surface area of the pipe [\si{m^{2}}]  \\
+	$ T_{in} $=		        &353	    &                                          &Inlet temperature of water from collector [\si{K}]  \\
+	$ T_{boiler} $          &293        &                                          &Temperature of water in the boiler [\si{K}] \\		
 \end{tabular}
 
 \subsection{Formulas used to calculate the parameters}
@@ -21,3 +21,17 @@ This Section contains the parameters for the Heat Exchanger (Boiler) together wi
     $ A_{p}=pi*d_{p}*delta_L $ \\
     $ V_{w}=(pi/4)*d_{p}^{2}*delta_L $ \\
     $ m_{w}=rho_{w}* V_{w} $ \\
+    
+\subsection{Model Equations}
+
+\subsubsection{Heat Exchanger Section I}
+$  \dfrac{dT_{1}}{dt} = \dfrac{\dot{m_{w}}*Cp_{w}*(T_{in}-T_{1}) - U*A_{p}*(T_{1}-T_{boiler}) }{m_{w}*Cp_{w}} $
+
+\subsubsection{Heat Exchanger Section II}
+$  \dfrac{dT_{2}}{dt} = \dfrac{\dot{m_{w}}*Cp_{w}*(T_{1}-T_{2}) - U*A_{p}*[T_{2}-(T_{1}-T_{boiler})]}{m_{w}*Cp_{w}}  $
+
+\subsubsection{Heat Exchanger Section III}
+$  \dfrac{dT_{3}}{dt} = \dfrac{\dot{m_{w}}*Cp_{w}*(T_{2}-T_{3}) - U*A_{p}*[T_{3}-(T_{2}-(T_{1}-T_{boiler}))]}{m_{w}*Cp_{w}}  $
+
+\subsubsection{Heat Exchanger Section IV}
+$  \dfrac{dT_{out}}{dt} = \dfrac{\dot{m_{w}}*Cp_{w}*(T_{3}-T_{out}) - U*A_{p}*[T_{out}-(T_{3}-(T_{2}-(T_{1}-T_{boiler})))]}{m_{w}*Cp_{w}}  $
